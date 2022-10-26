@@ -1,24 +1,42 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import TextForm from './components/Textform';
+import Alert from './components/Alert';
 
 function App() {
+  const [darkMode , setDarkMode] = useState(false)
+  const [alert , setAlert] = useState(null)
+
+  const showAlert = (type,message)=>{
+    setAlert({
+      msg : message,
+      type : type
+    })
+    setTimeout(() => {
+      setAlert(null)
+    }, 1500);
+  }
+
+  const toggleMode = ()=>{
+    if(darkMode===true){
+      setDarkMode(false)
+      document.getElementsByTagName('body')[0].style.backgroundColor='azure'
+      document.getElementsByTagName('body')[0].style.color='black'
+      showAlert('success','Light mode is enabled')
+    }else{
+      setDarkMode(true)
+      document.getElementsByTagName('body')[0].style.backgroundColor='#3b3b3b'
+      document.getElementsByTagName('body')[0].style.color='white'
+      showAlert('success','Dark mode is enabled')
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navbar title="TextUtils" about="About" mode={darkMode} changeTheme={toggleMode} />
+    <Alert alert={alert}/>
+    <TextForm heading="Enter the text here" mode={darkMode} showAlert={showAlert} />
+    </>
   );
 }
 
