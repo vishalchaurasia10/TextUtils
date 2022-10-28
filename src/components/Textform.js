@@ -66,7 +66,7 @@ export default function TextForm(props) {
             <p> <span className='text-4xl font-bold'>{count(text+" ")}</span> words and <span className='text-4xl font-bold'>{text.length}</span> characters</p>
             <p className='py-6'><span className='text-2xl font-bold'>{0.008*count(text+" ")}</span> minutes read</p>
             <h1 className='text-2xl font-medium py-5 pt-0 underline'>Preview</h1>
-            <p>{text.length===0?'Enter something in the textbox above to preview it here.':text}</p>
+            <p>{text.length===0?'Nothing to preview here.':text}</p>
         </div>
         </>
     )

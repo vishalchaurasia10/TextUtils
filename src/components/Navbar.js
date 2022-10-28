@@ -16,10 +16,10 @@ export default function Navbar(props) {
       </ul>
       <ul className=' w-1/3 items-center flex'>
         <div className="customTheme absolute right-20 flex items-center pl-60 space-x-4 justify-center">
-        <button className='hidden md:block rounded-full h-7 w-7 bg-[#BBE7FE]'></button>
-        <button className='hidden md:block rounded-full h-7 w-7 bg-[#D3B5E5]'></button>
-        <button className='hidden md:block rounded-full h-7 w-7 bg-[#FFD4DB]'></button>
-        <button className='hidden md:block rounded-full h-7 w-7 bg-[#EFF1DB]'></button>
+        <button className='hidden md:block rounded-full h-7 w-7 border-2 border-[#688ea3] bg-[#BBE7FE]' title='apply custom theme' onClick={()=>{props.changeCustomTheme('#BBE7FE')}}></button>
+        <button className='hidden md:block rounded-full h-7 w-7 border-2 border-[#8b7996] bg-[#D3B5E5]' title='apply custom theme' onClick={()=>{props.changeCustomTheme('#D3B5E5')}}></button>
+        <button className='hidden md:block rounded-full h-7 w-7 border-2 border-[#967e82] bg-[#FFD4DB]' title='apply custom theme' onClick={()=>{props.changeCustomTheme('#FFD4DB')}}></button>
+        <button className='hidden md:block rounded-full h-7 w-7 border-2 border-[#a5a797] bg-[#EFF1DB]' title='apply custom theme' onClick={()=>{props.changeCustomTheme('#EFF1DB')}}></button>
         </div>
         <input className="h-[1.6rem] w-10 absolute right-[1.4rem] appearance-none bg-white border-none rounded-full" onClick={props.changeTheme} type="checkbox" name="" id="switchTheme" title="Change Theme"/>
         <div className={`switch transition-all duration-300 absolute top-[1.1rem] right-[2.4rem] bg-black h-[1.35rem] w-[1.35rem] rounded-full ${props.mode?'translate-x-[0.85rem]':''}`} title="Change Theme" onClick={props.changeTheme} id="switchThemeMoveBtn"></div>

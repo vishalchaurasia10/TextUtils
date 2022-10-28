@@ -18,6 +18,10 @@ function App() {
     }, 1500);
   }
 
+  const toggleTheme = (color)=>{
+    document.getElementsByTagName('body')[0].style.backgroundColor=color
+  }
+
   const toggleMode = ()=>{
     if(darkMode===true){
       setDarkMode(false)
@@ -33,7 +37,7 @@ function App() {
   }
   return (
     <>
-    <Navbar title="TextUtils" about="About" mode={darkMode} changeTheme={toggleMode} />
+    <Navbar title="TextUtils" about="About" mode={darkMode} changeTheme={toggleMode} changeCustomTheme={toggleTheme} />
     <Alert alert={alert}/>
     <TextForm heading="Enter the text here" mode={darkMode} showAlert={showAlert} />
     </>
