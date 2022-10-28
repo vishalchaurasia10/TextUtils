@@ -34,7 +34,7 @@ export default function TextForm(props) {
         for(let i=0;i< textTyped.length ;i++)
         {
             let ch = textTyped.charAt(i)
-            if(ch!==' ')
+            if(ch!==' '&&ch!=='\n')
             {
                 word+=ch
             }else{
@@ -65,7 +65,7 @@ export default function TextForm(props) {
             <h1 className='text-4xl  font-medium py-10'>Your text summary</h1>
             <p> <span className='text-4xl font-bold'>{count(text+" ")}</span> words and <span className='text-4xl font-bold'>{text.length}</span> characters</p>
             <p className='py-6'><span className='text-2xl font-bold'>{0.008*count(text+" ")}</span> minutes read</p>
-            <h1 className='text-2xl font-medium py-5 pt-0 underline'>Preview</h1>
+            <h1 className='text-2xl font-medium py-5 pt-0 underline'>Preview:</h1>
             <p>{text.length===0?'Nothing to preview here.':text}</p>
         </div>
         </>
